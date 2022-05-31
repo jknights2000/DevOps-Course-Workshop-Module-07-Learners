@@ -20,9 +20,9 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - run: |
-          npm install
-          
+          npm install npm@latest
+
     - name: ts build
-      run: npm run build
+      run: npm build
     - name: ts tests
       run: npm test
