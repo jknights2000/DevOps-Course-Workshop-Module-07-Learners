@@ -22,11 +22,8 @@ jobs:
     - run: npm install npm@latest
 
     - name: ts build
-      run: cd DotnetTemplate.Web
-      run: npm build
+      run: cd DotnetTemplate.Web && npm build
     - name: ts lint
-      run: cd DotnetTemplate.Web
-      run: npm lint
+      run: cd DotnetTemplate.Web && npm lint
     - name: ts test
-      run: cd DotnetTemplate.Web
-      run: npm t
+      run: cd DotnetTemplate.Web && npm t
