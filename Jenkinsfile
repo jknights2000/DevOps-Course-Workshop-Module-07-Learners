@@ -6,7 +6,7 @@ pipeline {
             agent{ 
                 docker{ image 'mcr.microsoft.com/dotnet/sdk:6.0'}
             }
-            enviroment{ 
+            environment{ 
                 DOTNET_CLI_HOME ='/tmp/dotnet_cli_home'
             }
             steps {
