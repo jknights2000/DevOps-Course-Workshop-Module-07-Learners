@@ -23,4 +23,4 @@ jobs:
           npm install npm@latest
 
     - name: ts build
-      run: npm run all
+      run: npm run
