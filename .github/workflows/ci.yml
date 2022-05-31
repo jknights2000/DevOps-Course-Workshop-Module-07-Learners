@@ -22,10 +22,10 @@ jobs:
     - run: npm install npm@latest
 
     - name: ts build
-      run: run build
+      run: npm run build
       working-directory: DotnetTemplate.Web
     - name: ts lint
-      run: run lint
+      run: npm run lint
       working-directory: DotnetTemplate.Web
     - name: ts test
       run: npm t
