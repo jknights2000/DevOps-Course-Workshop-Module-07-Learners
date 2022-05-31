@@ -13,3 +13,9 @@ jobs:
       run: dotnet build
     - name: test
       run: dotnet test
+    - name: depend
+      run: npm install
+    - name: ts build
+      run: npm run build
+    - name: ts tests
+      run: npm test
