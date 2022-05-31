@@ -19,9 +19,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - run: |
-          npm install npm@latest
-    - working-directory: DotnetTemplate.Web
+    - run: npm install npm@latest
+      working-directory: DotnetTemplate.Web
 
 
     - name: ts build
