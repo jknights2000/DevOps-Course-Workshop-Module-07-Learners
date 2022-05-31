@@ -21,6 +21,12 @@ jobs:
     - uses: actions/checkout@v2
     - run: npm install npm@latest
 
-
     - name: ts build
-      run: npm run 
+      run: cd DotnetTemplate.Web
+      run: npm build
+    - name: ts lint
+      run: cd DotnetTemplate.Web
+      run: npm lint
+    - name: ts test
+      run: cd DotnetTemplate.Web
+      run: npm t
