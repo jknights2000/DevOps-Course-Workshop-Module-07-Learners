@@ -13,6 +13,15 @@ jobs:
       run: dotnet build
     - name: test
       run: dotnet test
+
+  typescript:
+    name: Build and test
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - run: |
+          npm install
+          
     - name: ts build
       run: npm run build
     - name: ts tests
