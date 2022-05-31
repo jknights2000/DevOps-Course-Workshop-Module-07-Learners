@@ -23,6 +23,6 @@ jobs:
           npm install npm@latest
 
     - name: ts build
-      run: npm run build
+      run: npm run
     - name: ts tests
       run: npm test
