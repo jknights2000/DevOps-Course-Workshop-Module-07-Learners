@@ -35,6 +35,7 @@ jobs:
 
     - name: docker build
       run: docker build -t obihen/dotnettemplate:hop .
-    
+    - name: docker Login
+      run: echo ${{ secrets.DOCKERPASSWORD }} | docker login -u ${{ secrets.DOCKERUSER }} --password-stdin
     - name: Docker Push
       run: docker push obihen/dotnettemplate:hop
