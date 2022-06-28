@@ -27,7 +27,7 @@ jobs:
       working-directory: ./DotnetTemplate.Web
   publish:
     name: Plz Work(AKA publish)
-    needs: [build,typescript]
+    needs: [build]
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
