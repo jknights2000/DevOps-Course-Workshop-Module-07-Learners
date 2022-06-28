@@ -30,3 +30,16 @@ jobs:
     - name: ts test
       run: npm t
       working-directory: DotnetTemplate.Web
+  publish:
+    name: Plz Work(AKA publish)
+    needs: [build,typescript]
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - run: npm install npm@latest
+
+    - name: docker build
+      run: docker build -t obihen/dotnettemplate:hop .
+    
+    - name: Docker Push
+      run: docker push obihen/dotnettemplate:hop hop
