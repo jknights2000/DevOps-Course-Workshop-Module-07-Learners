@@ -8,21 +8,23 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
+    - name: Dotnet build
+      run: dotnet build --configuration Release
 
-    - name: build       # Name of step
-      run: dotnet build
-    - name: test
+    - name: Dotnet test
       run: dotnet test
 
-  typescript:
-    image: node:17-bullseye-slim     
-    stage: test
-    script:
-      - cd DotnetTemplate.Web
-      - npm ci
-      - npm run build
-      - npm run lint
-      - npm run test
+    - name: Typescript install
+      run: npm ci
+      working-directory: ./DotnetTemplate.Web
+
+    - name: Typescript build
+      run: npm run build 
+      working-directory: ./DotnetTemplate.Web
+
+    - name: Typescript test
+      run: npm run test
+      working-directory: ./DotnetTemplate.Web
   publish:
     name: Plz Work(AKA publish)
     needs: [build,typescript]
