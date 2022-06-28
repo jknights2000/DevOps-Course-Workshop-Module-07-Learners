@@ -15,21 +15,14 @@ jobs:
       run: dotnet test
 
   typescript:
-    name: Build and test
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v2
-    - run: npm install npm@latest
-
-    - name: ts build
-      run: npm run build
-      working-directory: DotnetTemplate.Web
-    - name: ts lint
-      run: npm run lint
-      working-directory: DotnetTemplate.Web
-    - name: ts test
-      run: npm t
-      working-directory: DotnetTemplate.Web
+    image: node:17-bullseye-slim     
+    stage: test
+    script:
+      - cd DotnetTemplate.Web
+      - npm ci
+      - npm run build
+      - npm run lint
+      - npm run test
   publish:
     name: Plz Work(AKA publish)
     needs: [build,typescript]
